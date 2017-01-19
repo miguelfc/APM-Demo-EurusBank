@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serviceGroup>
+  <service name="queryCaimanIslandsWs" targetNamespace="http://ws.eurus.com">
+    <description>JNLPGenerator service</description>
+    <schema schemaNamespace="http://ws.eurus.com" />
+    <parameter name="ServiceClass" locked="false">com.eurus.ws.queryCaimanIslandsWs</parameter>
+    <operation name="sayHello">
+      <messageReceiver class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+    </operation>
+    <operation name="queryAccountsByName">
+      <messageReceiver class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+    </operation>
+    <operation name="queryAccountsByNameAndBranch">
+      <messageReceiver class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+    </operation>
+  </service>
+</serviceGroup>

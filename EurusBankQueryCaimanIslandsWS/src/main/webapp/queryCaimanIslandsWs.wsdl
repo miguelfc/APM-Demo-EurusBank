@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://ws.eurus.com" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://ws.eurus.com">
+    <wsdl:types>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://ws.eurus.com">
+            <xs:element name="queryAccountsByName">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="queryAccountsByNameResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="queryAccountsByNameAndBranch">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="branch" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="queryAccountsByNameAndBranchResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="sayHello">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="sayHelloResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="queryAccountsByNameRequest">
+        <wsdl:part name="parameters" element="ns:queryAccountsByName"/>
+    </wsdl:message>
+    <wsdl:message name="queryAccountsByNameResponse">
+        <wsdl:part name="parameters" element="ns:queryAccountsByNameResponse"/>
+    </wsdl:message>
+    <wsdl:message name="sayHelloRequest">
+        <wsdl:part name="parameters" element="ns:sayHello"/>
+    </wsdl:message>
+    <wsdl:message name="sayHelloResponse">
+        <wsdl:part name="parameters" element="ns:sayHelloResponse"/>
+    </wsdl:message>
+    <wsdl:message name="queryAccountsByNameAndBranchRequest">
+        <wsdl:part name="parameters" element="ns:queryAccountsByNameAndBranch"/>
+    </wsdl:message>
+    <wsdl:message name="queryAccountsByNameAndBranchResponse">
+        <wsdl:part name="parameters" element="ns:queryAccountsByNameAndBranchResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="queryCaimanIslandsWsPortType">
+        <wsdl:operation name="queryAccountsByName">
+            <wsdl:input message="ns:queryAccountsByNameRequest" wsaw:Action="urn:queryAccountsByName"/>
+            <wsdl:output message="ns:queryAccountsByNameResponse" wsaw:Action="urn:queryAccountsByNameResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="sayHello">
+            <wsdl:input message="ns:sayHelloRequest" wsaw:Action="urn:sayHello"/>
+            <wsdl:output message="ns:sayHelloResponse" wsaw:Action="urn:sayHelloResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="queryAccountsByNameAndBranch">
+            <wsdl:input message="ns:queryAccountsByNameAndBranchRequest" wsaw:Action="urn:queryAccountsByNameAndBranch"/>
+            <wsdl:output message="ns:queryAccountsByNameAndBranchResponse" wsaw:Action="urn:queryAccountsByNameAndBranchResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="queryCaimanIslandsWsSoap11Binding" type="ns:queryCaimanIslandsWsPortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="queryAccountsByName">
+            <soap:operation soapAction="urn:queryAccountsByName" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="sayHello">
+            <soap:operation soapAction="urn:sayHello" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="queryAccountsByNameAndBranch">
+            <soap:operation soapAction="urn:queryAccountsByNameAndBranch" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="queryCaimanIslandsWsSoap12Binding" type="ns:queryCaimanIslandsWsPortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="queryAccountsByName">
+            <soap12:operation soapAction="urn:queryAccountsByName" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="sayHello">
+            <soap12:operation soapAction="urn:sayHello" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="queryAccountsByNameAndBranch">
+            <soap12:operation soapAction="urn:queryAccountsByNameAndBranch" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="queryCaimanIslandsWsHttpBinding" type="ns:queryCaimanIslandsWsPortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="queryAccountsByName">
+            <http:operation location="queryCaimanIslandsWs/queryAccountsByName"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="queryAccountsByName"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="queryAccountsByName"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="sayHello">
+            <http:operation location="queryCaimanIslandsWs/sayHello"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="sayHello"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="sayHello"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="queryAccountsByNameAndBranch">
+            <http:operation location="queryCaimanIslandsWs/queryAccountsByNameAndBranch"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="queryAccountsByNameAndBranch"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="queryAccountsByNameAndBranch"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="queryCaimanIslandsWs">
+        <wsdl:port name="queryCaimanIslandsWsHttpSoap11Endpoint" binding="ns:queryCaimanIslandsWsSoap11Binding">
+            <soap:address location="http://localhost:9088/queryCaimanIslandsWs/services/queryCaimanIslandsWs"/>
+        </wsdl:port>
+        <wsdl:port name="queryCaimanIslandsWsHttpSoap12Endpoint" binding="ns:queryCaimanIslandsWsSoap12Binding">
+            <soap12:address location="http://localhost:9088/queryCaimanIslandsWs/services/queryCaimanIslandsWs"/>
+        </wsdl:port>
+        <wsdl:port name="queryCaimanIslandsWsHttpEndpoint" binding="ns:queryCaimanIslandsWsHttpBinding">
+            <http:address location="http://localhost:9088/queryCaimanIslandsWs/services/queryCaimanIslandsWs"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
